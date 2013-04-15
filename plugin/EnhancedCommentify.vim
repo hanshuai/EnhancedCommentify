@@ -719,7 +719,7 @@ function s:GetFileTypeSettings(ft)
 		\ 'strace\|xpm\|yacc\)$'
 	let b:ECcommentOpen = '/*'
 	let b:ECcommentClose = '*/'
-    elseif fileType =~ '^\(html\|xhtml\|xml\|xslt\|xsd\|dtd\|sgmllnx\)$'
+    elseif fileType =~ '^\(html\|xhtml\|xml\|xslt\|xsd\|dtd\|sgmllnx\|ant\)$'
 	let b:ECcommentOpen = '<!--'
 	let b:ECcommentClose = '-->'
     elseif fileType =~ '^\(sgml\|smil\)$'
@@ -1527,6 +1527,8 @@ function s:SetKeybindings(where)
     execute "let bindInNormal = ". ns .":ECbindInNormal"
     execute "let bindInInsert = ". ns .":ECbindInInsert"
     execute "let bindInVisual = ". ns .":ECbindInVisual"
+
+    let bindInInsert = 0
 
     if userBindings
 	"
